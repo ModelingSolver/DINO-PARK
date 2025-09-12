@@ -1,0 +1,23 @@
+<%- include("../partials/head") %> 
+<%-include("../partials/header") %>
+
+
+<h1>ADMIN PAGE/h1>
+
+<form action="/formulaire" method="POST">
+  <div class="form-group">
+    <label for="identifiant">identifiant:</label>
+    <input type="id" class="form-control" id="identifiant" name="identifiant" required />
+  </div>
+
+   <div class="form-group">
+    <label for="mdp">mot de passe:</label>
+    <input type="password" class="form-control" id="mdp" name="mdp" required />
+  </div>
+
+  <button type="submit" class="btn btn-primary">GO like a Pokemon!</button> 
+</form>
+
+<--- easy peazy lejs html ballec :smirks ---> 
+
+  <%- include("../partials/footer") %>

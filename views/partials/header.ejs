@@ -1,0 +1,52 @@
+ <header class="main-header">
+  <div class="header-content">
+    <div class="header-left">
+      <a href="/" class="brand-link">
+        <span class="brand-title">🦖 - DINO-PARK</span>
+      </a>
+    </div>
+    <div class="header-right">
+      <a href="/formulaire" class="button">RESERVATIONS</a>
+      <a href="" class="burgon">☰</a>
+      <a href="mailto:super.brief.simplon@gmail.com" class="button button--secondary">Contact</a>
+    </div>
+  </div>
+</header>
+
+
+<!-- Animation dinosaure dans l'onglet -->
+<script>
+  // Animation du dinosaure qui se balade dans l'onglet
+  const dinoStates = [
+    "🦕 DINO-PARK",
+    " 🦕 DINO-PARK", 
+    "  🦕 DINO-PARK",
+    "   🦕 DINO-PARK",
+    "    🦕 DINO-PARK",
+    "     🦕 DINO-PARK",
+    "    🦖 DINO-PARK!",
+    "   🦖 DINO-PARK!",
+    "  🦖 DINO-PARK!",
+    " 🦖 DINO-PARK!",
+    "🦖 DINO-PARK!",
+    "🦴 DINO-PARK",
+    " 🦴 DINO-PARK",
+    "  🌿 DINO-PARK",
+    "   🌿 DINO-PARK",
+    "    🦕 DINO-PARK"
+  ];
+  
+  let currentDinoIndex = 0;
+  
+  function animateDinoTitle() {
+    document.title = dinoStates[currentDinoIndex];
+    currentDinoIndex = (currentDinoIndex + 1) % dinoStates.length;
+  }
+  
+  // Démarrer l'animation après le chargement de la page
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      setInterval(animateDinoTitle, 800);
+    }, 1000);
+  });
+</script>

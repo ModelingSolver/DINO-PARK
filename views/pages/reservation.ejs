@@ -1,0 +1,52 @@
+<%- include("../partials/head") %> <%-include("../partials/header") %>
+
+<h1>RESERVATION</h1>
+
+<form action="/formulaire" method="POST">
+  <div class="form-group">
+    <label for="titre">Nom du client</label>
+    <input type="text" class="form-control" id="titre" name="titre" required />
+  </div>
+
+  <div class="form-group">
+    <label for="date_debut">Date</label>
+    <input
+      type="date"
+      class="form-control"
+      id="date_debut"
+      name="date_debut"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="forfait">Forfait</label>
+    <select class="form-control" id="forfait" name="forfait" required>
+      <option value="">Sélectionnez un type</option>
+      <option value="Petit">Forfait Petit Dino</option>
+      <option value="MoyenDino">Forfait Moyen Dino</option>
+      <option value="Freelance">Forfait PREMIUM</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="nbre">Nombres de personnes</label>
+    <input
+      type="Integer"
+      class="form-control"
+      id="nbre"
+      name="nbre"
+      placeholder="Ex: HTML, CSS, JavaScript"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="prix">Prix</label>
+    <input type="prix" class="form-control" id="prix" name="prix" required />
+  </div>
+
+  <button type="submit" class="btn btn-primary">RESERVEZ</button>
+</form>
+
+<%- include("../partials/footer") %>
