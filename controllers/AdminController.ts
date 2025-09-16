@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { Controller } from "./Controller";
-import {Dinosaure} from "../repositories/Dinosaure";
+import {Dinosaure} from "../repositories/DinosaureRepo";
 
 
 export class AdminController extends Controller{
   
-  public chemsPanel() {
+  public browsePanel() {
 
     panel:[] = []
     this.response.render(`./pages/panelControl`, {
@@ -14,37 +14,24 @@ export class AdminController extends Controller{
     });
   }
 
-  public hemscPanel() {
+  public readPanel() {
 
-
-      const wantedDino = dino.request.params.id ;
-
-
-    getOneDino();
-
- this.response.render(`./pages/panelControl`,
-
-  return name,
-        regime,
-        description,
-
-    );
 
    }
 
 
-   public emschPanel() {
+   public addPanel() {
      this.response.send("Bienvenue sur l'édition de panel");
   }
 
 
-   public mscheForm() {
+   public showForm() {
     this.response.render("./pages/adminConnect");
   }
 
 
 
-  public schemPanel() {
+  public deletePanel() {
 
     
   }

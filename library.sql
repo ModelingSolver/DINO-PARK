@@ -1,5 +1,6 @@
 CREATE TABLE Dinosaures(
-   id VARCHAR(50) ,
+   id VARCHAR(50),
+   name VARCHAR(100),
    description VARCHAR(500) ,
    regime VARCHAR(100) ,
    PRIMARY KEY(id)

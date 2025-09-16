@@ -1,5 +1,5 @@
 export interface DinosauresTypeRow {
-  id: number | null;
+  id: string | null;
   name: string;
   regime: string;
   description: string;
@@ -7,12 +7,12 @@ export interface DinosauresTypeRow {
 }
 
 export class Dinosaures {
-  protected id: number | null;
+  protected id: string | null;
   protected name: string;
   protected regime: string;
   protected description: string;
 
-  constructor(id: number | null, name: string, regime: string, description: string) {
+  constructor(id: string | null, name: string, regime: string, description: string) {
     this.id = id;
     this.name = name;
     this.regime = regime;
