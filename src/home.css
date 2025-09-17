@@ -1,0 +1,63 @@
+/* Home page..*/
+body {
+    background-color: #B1FC40;
+    color: #000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* MAIN CONTENT */
+main {
+    padding: 20px;
+}
+
+.hero-section {
+    display: flex;
+    gap: 20px;
+    /* Ajustement pour la responsivité if needed */
+    flex-wrap: wrap; 
+}
+
+.hero-left, .hero-right {
+    position: relative;
+    border: 2px solid #000; 
+    overflow: hidden; 
+}
+
+.hero-left {
+    flex: 2;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.right-top, .right-bottom {
+    flex: 1;
+    position: relative;
+    border: 2px solid #000; 
+    box-sizing: border-box; /* FIT la bordure ne modifie pas les dimensions */
+}
+
+/* Images */
+.hero-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* FIT l'image couvre bien son conteneur sans se déformer */
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px #000; 
+    padding: 5px;
+}

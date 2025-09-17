@@ -4,17 +4,14 @@ import  {Repository} from "../repositories/Repository"
 import {Dinosaures }from "../models/dinosaures"
  import { safeParse, z } from 'zod';
 
+const ResaSchema = z.object({
+  name: z.string().max(100),
+  date: z.preprocess((val) => new Date(val as string), z.date()),
+  forfait: z.string(),
+  nombre: z.preprocess((val) => Number(val), z.number().max(50)),
+});
 
-     const ResaSchema = z.object ({
-  
-         name: z.string().max(100),
-         date: z.date(),
-         forfait: z.string(),
-         nombre: z.number().max(50),
-
- });
-
- const resas = [];//ailleurs;
+ const resas = [];//hors scope ?! i hope!
 
 export class DinosaureController extends Controller{
   
@@ -22,8 +19,8 @@ export class DinosaureController extends Controller{
 
     
     const repodino = new DinosaureRepo();
-    const liste = await repodino.findAll();
-    this.response.render(`./liste`, {
+    const liste = await repodino.findAll() || [];
+    this.response.render(`pages/liste`, {
          
           dinos: liste
 
@@ -48,10 +45,10 @@ export class DinosaureController extends Controller{
         nombre: formData.nombre,
     };
         resas.push(newResa);
-        this.response.send('Resarvation succeed!!').render('./home')
+        this.response.render('pages/home', { message: 'Reservation succeeded!' });
   
   }
-       else {this.response.render('./reservation',{
+       else {this.response.render('pages/reservation',{
 
         tiensTonReste: this.request.body
        }
@@ -63,7 +60,7 @@ export class DinosaureController extends Controller{
 
 
    public showForm() {
-    this.response.render("");
+    this.response.render("pages/reservation");
   }
 
   public deleteDino() {

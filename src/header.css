@@ -1,0 +1,106 @@
+/*  header principal */
+.main-header {
+  background-color: #2ED82B; /* Fond Vert jurassique ( si jte jure ca existe!! */
+  color: #2d2d2d; /* Texte plus foncé et lisible */
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-family: 'Inter', 'Poppins', Arial, sans-serif; /* Police approx */
+}
+
+/* Conteneur du contenu du header pour alignement */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Section de gauche (logo emoticone /titre) */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.brand-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Couleur du titre pour le faire ressortir */
+.brand-title {
+  color: #2d2d2d; /* Bleu moderne?? */
+}
+
+/* Section de droite (boutons) */
+.header-right {
+  display: flex;
+  gap: 1rem;
+}
+
+/*mi button mi burger, le burgon... */
+.burgon {
+    display: none;
+} 
+
+/* Styles pour les boutons */
+.button {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent;
+  font-family: inherit; /* Hérite de la police du header!! */
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button--primary {
+  background-color: #E2F892; /* vert leger */
+  color: #E2F892;
+}
+
+.button--primary:hover {
+  background-color: #E2F892; /* vert leger */
+}
+
+.button--secondary {
+  background-color: transparent;
+  color: #E2F892; /* vert leger */
+  border-color: #E2F892;
+}
+
+.button--secondary:hover {
+  background-color: #6b7280;
+  color: #E2F892;
+}
+
+@media (max-width: 410px) {
+
+.button button--secondary {
+  display: none;
+}
+
+.button {
+  display: none;
+}
+
+.burgon {
+    display: flex;
+    color: black;
+} 
+
+}

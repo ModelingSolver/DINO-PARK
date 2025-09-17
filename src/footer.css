@@ -1,0 +1,41 @@
+/* Footer */
+footer {
+    background: #2ED82B;
+    color: #2ED82B;
+    padding: 20px 20px;
+    margin-top: 50px;
+    /* position: fixed;
+    bottom: 0;
+    width: 100%; */
+
+}
+
+.localisation {
+
+    color: black;
+    text-align: center;
+
+
+
+
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .columnsFooter {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    footer {
+        padding: 15px 15px;
+    }
+    
+    .brandName {
+        font-size: 20px;
+    }
+    
+    .colName {
+        font-size: 16px;
+    }
+}
