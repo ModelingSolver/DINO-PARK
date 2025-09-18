@@ -39,7 +39,7 @@
 
 /* Couleur du titre pour le faire ressortir */
 .brand-title {
-  color: #2d2d2d; /* Bleu moderne?? */
+  color: white; /* Bleu moderne?? */
 }
 
 /* Section de droite (boutons) */
@@ -56,6 +56,7 @@
 /* Styles pour les boutons */
 .button {
   text-decoration: none;
+  color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   font-weight: 600;
@@ -79,7 +80,7 @@
 
 .button--secondary {
   background-color: transparent;
-  color: #E2F892; /* vert leger */
+  color: white; /* vert leger */
   border-color: #E2F892;
 }
 
@@ -88,7 +89,7 @@
   color: #E2F892;
 }
 
-@media (max-width: 410px) {
+@media (max-width: 510px) {
 
 .button button--secondary {
   display: none;

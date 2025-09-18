@@ -37,6 +37,12 @@ main {
     gap: 20px;
 }
 
+.hidden {
+
+
+    color: #B1FC40;
+}
+
 .right-top, .right-bottom {
     flex: 1;
     position: relative;
@@ -45,11 +51,14 @@ main {
 }
 
 /* Images */
-.hero-section img {
+.hero-section  img{
     width: 100%;
     height: 100%;
     object-fit: cover; /* FIT l'image couvre bien son conteneur sans se déformer */
+   
 }
+
+
 
 .overlay-text {
     position: absolute;

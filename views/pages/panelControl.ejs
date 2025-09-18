@@ -1,16 +1,77 @@
 <%- include("../partials/head") %> 
 <%-include("../partials/header") %>
 
- <h1>ADMIN CONTROL PANNEL</h1>
 
 
+<main>
+    <div class="admin-panel-container">
+        <h1>ADMIN CONTROL PANNEL</h1>
+        <p class="subtitle">Billets dispo pour la semaine en cours...</p>
 
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Lundi</th>
+                    <th>Mardi</th>
+                    <th>Mercredi</th>
+                    <th>Jeudi</th>
+                    <th>Vendredi</th>
+                    <th>Samedi</th>
+                    <th>Dimanche</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="row-header">PetitDino<br>max 1000</td>
+                    <td>854</td>
+                    <td>856</td>
+                    <td>635</td>
+                    <td>762</td>
+                    <td>812</td>
+                    <td>438</td>
+                    <td>529</td>
+                </tr>
+                <tr>
+                    <td class="row-header">MoyenDino<br>max 300</td>
+                    <td>253</td>
+                    <td>274</td>
+                    <td>203</td>
+                    <td>267</td>
+                    <td>224</td>
+                    <td>174</td>
+                    <td>189</td>
+                </tr>
+                <tr>
+                    <td class="row-header">PREMIUM<br>max 200</td>
+                    <td>175</td>
+                    <td>182</td>
+                    <td>163</td>
+                    <td>174</td>
+                    <td>181</td>
+                    <td>111</td>
+                    <td>135</td>
+                </tr>
+            </tbody>
+        </table>
 
+        <table class="stats-table">
+            <tbody>
+                <tr>
+                    <td class="row-header">STATS<br>over<br>last-WEEK</td>
+                    <td>-13%</td>
+                    <td>-7%</td>
+                    <td>-4%</td>
+                    <td>-11%</td>
+                    <td>-9%</td>
+                    <td>-5%</td>
+                    <td>-6%</td>
+                </tr>
+            </tbody>
+        </table>
 
-
-
-
-  <button type="submit" class="btn btn-primary">BACK-HOME</button>
-</form>
+        <button class="back-home-button" onclick="window.location.href='/'" >BACK - HOME</button>
+    </div>
+</main>
 
 <%- include("../partials/footer") %>

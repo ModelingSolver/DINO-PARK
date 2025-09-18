@@ -2,7 +2,7 @@
 <%-include("../partials/header") %>
 
 <div class="page-container">
-  <SWAGG>
+
   <h1> Nos DINOS, nos Forfaits:</h1>
   <p>  - PetitDino: 3 dinosaures -
      MoyenDino: 6 dinosaures -
@@ -10,16 +10,14 @@
   </p>
   <ul>
     <% dinos.forEach(dino => { %>
-      <li>dinos
+      <li>
         <h2><%= dino.name %></h2>
-        <img src="<%= dino.image %>"> <IMAGESDINO class="id"></IMAGESDINO> </img>
-        <a href="/detail/<%= detail.id %>">Voir le détail</a>
         <p>description:<%= dino.description %></p>
         <p>régime: <%= dino.regime %></p>
       </li>
     <% }) %>
   </ul>
-  </SWAGG>
+ 
 </div>
 
 

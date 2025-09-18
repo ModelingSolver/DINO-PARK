@@ -8,10 +8,7 @@ export class AdminController extends Controller{
   public browsePanel() {
 
     panel:[] = []
-    this.response.render(`./pages/panelControl`, {
-        panel: [],
-
-    });
+    this.response.render(`./pages/panelControl`);
   }
 
   public readPanel() {
@@ -40,7 +37,7 @@ export class AdminController extends Controller{
 
  public laurencePanel() {
 
-
+     //tkt bientot laurence pannel ca ser de la grosse fonction ;D
   
 }
 }
