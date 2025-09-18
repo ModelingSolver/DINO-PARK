@@ -1,28 +1,34 @@
 export interface ReservationTypeRow {
   id_Reservation: number | null;
-  Date: Date;
-
+  Date_de_resa: Date;
+  id: number; 
 }
 
 export class Reservation {
   protected id_Reservation: number | null;
-  protected Date: Date;
+  protected Date_de_resa: Date;
+  protected id: number;
 
-  constructor(id: number | null, name: string) {
+  constructor(id_Reservation: number | null, Date_de_resa: Date ,id: number) {
     this.id_Reservation = id_Reservation;
-    this.Date = Date;
-  
+    this.Date_de_resa = Date_de_resa;
+    this.id = id; 
   }
 
   static fromRow(row: ReservationTypeRow): Reservation {
-    return new Reservation(row.id_Reservation, row.Date);
+    return new Reservation(row.id_Reservation, row.Date_de_resa, row.id);
   }
 
   getReservation_id() {
-    return this.id_Reservations;
+    return this.id_Reservation;
   }
 
   getDate() {
-    return this.Date;
+    return this.Date_de_resa;
   }
+
+    getUserId() {
+    return this.id;
+  }
+  
 }

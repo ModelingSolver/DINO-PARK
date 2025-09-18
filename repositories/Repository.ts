@@ -1,6 +1,7 @@
 import { Pool } from "pg";
 import { Database } from "../libs/Database";
-import { Dinosaure } from "./DinosaureRepo";
+// import { Dinosaure } from "./DinosaureRepo";
+// import { ResaRepo } from "./ResaRepo";
 
 
 export abstract class Repository<T> { 
@@ -29,10 +30,7 @@ export abstract class Repository<T> {
       return null;
     }
   };
-
-
-
-
+  
 }
 
 
