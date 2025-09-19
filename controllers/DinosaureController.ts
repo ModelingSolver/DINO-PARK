@@ -1,7 +1,9 @@
 import { Controller } from "./Controller";
 import { DinosaureRepo} from "../repositories/DinosaureRepo";
-import  {Repository} from "../repositories/Repository"
-import {Dinosaures }from "../models/dinosaures"
+import  { Repository } from "../repositories/Repository"
+import  { ResaRepo } from "../repositories/ResaRepo"
+import { Dinosaures }from "../models/dinosaures"
+import { Reservation }from "../models/reservations"
  import { safeParse, z } from 'zod';
 
 const ResaSchema = z.object({
@@ -33,30 +35,47 @@ export class DinosaureController extends Controller{
 
    }
 
-   public addResa() {
+   
+public async addResa() {
+  const formData = this.request.body;
+  const valide = ResaSchema.safeParse(formData);
 
-        const formData = this.request.body;
-        const valide = ResaSchema.safeParse(formData)
-        if (valide.success){
-        const newResa = {
-        id: resas.length + 1, // Creer un id unique
-        name: formData.name,
-        date: formData.date,
-        nombre: formData.nombre,
+  if (valide.success) {
+    const newResa = {
+      id: resas.length + 1,
+      name: formData.name,
+      date: formData.date,
+      forfait: formData.forfait,
+      nombre: formData.nombre,
     };
-        resas.push(newResa);
-        this.response.render('pages/home', { message: 'Reservation succeeded!' });
+
+    // garde stockage local
+    resas.push(newResa);
+
+    try {
+      const resaRepo = new ResaRepo();
+
+      const reservation = new Reservation(
+        null,                      
+        new Date(formData.date),   
+        1                          
+      );
+
+      await resaRepo.createResa(reservation);
+      console.log("Résa en db OK!!");
+    } catch (err) {
+      console.error("Erreur Résa DB", err);
+    }
+
+    this.response.render("pages/home", { message: "Reservation effectuée!" });
+  } else {
+    this.response.render("pages/reservation", {
+      tiensTonReste: this.request.body,
+      errors: valide.error.format(),
+    });
+  }
+}
   
-  }
-       else {this.response.render('pages/reservation',{
-
-        tiensTonReste: this.request.body
-       }
-
-       
-       );}
-
-  }
 
 
    public showForm() {

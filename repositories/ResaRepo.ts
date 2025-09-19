@@ -8,11 +8,7 @@ export class ResaRepo extends Repository<Reservation> {
   createResa = async (reservation: Reservation): Promise<Reservation | null> => {
     const query = {
       name: "create-reservation",
-      text: `
-        INSERT INTO "Reservations" ("Date_de_resa", "id")
-        VALUES ($1, $2)
-        RETURNING *;
-      `,
+      text: `INSERT INTO reservations (date_de_resa, id) VALUES ($1, $2);`,
       values: [reservation.getDate(), reservation.getUserId()],
     };
 
